@@ -1,9 +1,6 @@
 package com.example.sportsbetting.domain;
 
-import com.example.sportsbetting.database.BetBuilder;
-
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 // ORM IMPORTS
