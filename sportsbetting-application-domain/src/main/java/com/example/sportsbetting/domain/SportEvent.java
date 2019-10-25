@@ -16,21 +16,6 @@ import javax.persistence.OneToOne;
 @Inheritance
 public abstract class SportEvent implements Serializable {
 
-    public int getId() {
-        return Id;
-    }
-
-    public SportEvent() {
-    }
-
-    public SportEvent(String title, LocalDateTime startDate, LocalDateTime endDate, Set<Bet> bets, Result result) {
-        this.setTitle(title);
-        this.setStartDate(startDate);
-        this.setEndDate(endDate);
-        this.setBets(bets);
-        this.setResult(result);
-    }
-
     @Id
     @GeneratedValue
     private int Id;
@@ -49,6 +34,21 @@ public abstract class SportEvent implements Serializable {
 
     @OneToOne(fetch = FetchType.EAGER)
     private Result result;
+
+    public int getId() {
+        return Id;
+    }
+
+    public SportEvent() {
+    }
+
+    public SportEvent(String title, LocalDateTime startDate, LocalDateTime endDate, Set<Bet> bets, Result result) {
+        this.setTitle(title);
+        this.setStartDate(startDate);
+        this.setEndDate(endDate);
+        this.setBets(bets);
+        this.setResult(result);
+    }
 
     public String getTitle() {
         return title;

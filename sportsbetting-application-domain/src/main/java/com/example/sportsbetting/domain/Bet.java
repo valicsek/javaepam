@@ -1,6 +1,9 @@
 package com.example.sportsbetting.domain;
 
+import com.example.sportsbetting.database.BetBuilder;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 // ORM IMPORTS
@@ -23,24 +26,6 @@ public class Bet implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Bet() {
-    }
-
-    public Bet(String description, SportEvent event, List<Outcome> winnerOutcomes, BetType type) {
-        this.setDescription(description);
-        this.setEvent(event);
-        this.setWinnerOutcome(winnerOutcomes);
-        this.setBettype(type);
-    }
-
     @Column(name = "description")
     private String description;
 
@@ -53,6 +38,23 @@ public class Bet implements Serializable {
 
     @Enumerated(EnumType.STRING)
     private BetType type;
+
+    public Bet() { }
+
+    public Bet(String description, SportEvent event, List<Outcome> winnerOutcomes, BetType type) {
+        this.setDescription(description);
+        this.setEvent(event);
+        this.setWinnerOutcome(winnerOutcomes);
+        this.setBettype(type);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public BetType getBettype() {
         return type;
@@ -88,5 +90,4 @@ public class Bet implements Serializable {
     public void setEvent(SportEvent event) {
         this.event = event;
     }
-
 }

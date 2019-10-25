@@ -16,24 +16,6 @@ public class OutcomeOdd implements Serializable {
     @GeneratedValue
     private int Id;
 
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int Id) {
-        this.Id = Id;
-    }
-
-    public OutcomeOdd() {
-    }
-
-    public OutcomeOdd(BigDecimal value, LocalDateTime validFrom, LocalDateTime validUntil, Outcome outcome) {
-        this.setValue(value);
-        this.setValidFrom(validFrom);
-        this.setValidUntil(validUntil);
-        this.setOutcome(outcome);
-    }
-
     @Column(name="value")
     private BigDecimal value;
     
@@ -45,6 +27,24 @@ public class OutcomeOdd implements Serializable {
     
     @OneToOne()
     private Outcome outcome;
+
+    public OutcomeOdd() {
+    }
+
+    public OutcomeOdd(BigDecimal value, LocalDateTime validFrom, LocalDateTime validUntil, Outcome outcome) {
+        this.setValue(value);
+        this.setValidFrom(validFrom);
+        this.setValidUntil(validUntil);
+        this.setOutcome(outcome);
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
+    }
 
     public Outcome getOutcome() {
         return outcome;

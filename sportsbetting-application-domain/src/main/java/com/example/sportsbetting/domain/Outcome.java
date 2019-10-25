@@ -16,15 +16,6 @@ public class Outcome implements Serializable {
     @Id
     @GeneratedValue
     private int Id;
-    public Outcome() {
-    }
-    
-
-    public Outcome(String description, Bet bet, List<OutcomeOdd> outcomeOdds) {
-        this.setDescription(description);
-        this.setBet(bet);
-        this.setOutcomeOdds(outcomeOdds);
-    }
 
     @Column(name="description")
     private String description;
@@ -34,6 +25,15 @@ public class Outcome implements Serializable {
     
     @OneToMany()
     private List<OutcomeOdd> outcomeOdds;
+
+    public Outcome() {
+    }
+
+    public Outcome(String description, Bet bet, List<OutcomeOdd> outcomeOdds) {
+        this.setDescription(description);
+        this.setBet(bet);
+        this.setOutcomeOdds(outcomeOdds);
+    }
 
     public List<OutcomeOdd> getOutcomeOdds() {
         return outcomeOdds;
