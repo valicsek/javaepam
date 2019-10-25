@@ -11,5 +11,20 @@
 
     <artifactId>sportsbetting-application-service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
+        <!-- Domain Dependency -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>sportsbetting-application-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
 
 </project>
